@@ -1,17 +1,17 @@
-{% load static %}
+{% extends "polls/base.html" %}
+{% block main %}
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
-
-<body>
-
-{% if latest_question_list %}
+<div class="container-fluid p-3">
+    <h3>Polls list</h3>
+    {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
-{% else %}
+    {% else %}
     <p>No polls are available.</p>
-{% endif %}
+    {% endif %}
+</div>
 
-</body>
+{% endblock main %}
