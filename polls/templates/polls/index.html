@@ -14,4 +14,15 @@
     {% endif %}
 </div>
 
+<div class="container-fluid p-3">
+    <!-- from the htmx docs, starter code -->
+    <!-- have a button POST a click via AJAX -->
+    <button type="button"
+        hx-post="/polls/clicked/" hx-swap="innerHTML"
+        class="btn btn-primary"
+    >
+        Click Me
+    </button>
+</div>
+
 {% endblock main %}
