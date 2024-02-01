@@ -10,3 +10,9 @@ This is mainly because I want to learn some htmx and you need some server side s
 Both can be added simply for development via a CDN.
 
 This will also give the opportunity to learn more about the Django templating language, hopefully.
+
+#### Including the CSRF token
+
+For `hx-post` you need to supply the CSRF token, one way of doing this is adding the attribute `hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'` to the body tag in the html template.
+
+For a simple way to limit a view to a certain http request method, see [here](https://docs.djangoproject.com/en/5.0/topics/http/decorators/). 
